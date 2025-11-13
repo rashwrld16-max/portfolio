@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Glass Card — Editable with Section</title>
+  <title>Glass Card — Static Content</title>
   <style>
     body{
       display:grid;place-items:center;height:100vh;margin:0;
@@ -24,25 +24,14 @@
       width:90%;max-width:800px;
       box-shadow:0 6px 30px rgba(2,6,23,0.6);
     }
-    .editable{
-      min-height:120px;outline:none;
-      font-size:18px;line-height:1.5;
-    }
-    .editable:empty::before{
-      content:attr(data-placeholder);
-      color:rgba(230,238,248,0.45);
-    }
-    .section{
-      margin-top:20px;padding:20px;border-radius:12px;
-      background:rgba(255,255,255,0.05);
-    }
+    h2{margin-top:0;color:#fff}
+    p{color:#dbe4f0;line-height:1.6}
   </style>
 </head>
 <body>
   <div class="card">
-    <div class="editable" contenteditable="true" data-placeholder="Write something here...">
-    
-
+    <h2>About Me</h2>
+    <p>Welcome to the error of portfolio</p>
   </div>
 </body>
 </html>
