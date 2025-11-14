@@ -7,9 +7,7 @@
 
   <style>
     body{
-      display:grid;
-      place-items:center;
-      height:100vh;
+      display:block;
       margin:0;
       font-family: 'Segoe UI', sans-serif;
       color:#fff;
@@ -17,6 +15,7 @@
         no-repeat center center fixed;
       background-size:cover;
       overflow-x:hidden;
+      padding-bottom:80px;
     }
 
     .card{
@@ -28,11 +27,12 @@
       padding:28px;
       width:90%;
       max-width:800px;
+      margin:40px auto;
       box-shadow:0 6px 30px rgba(2,6,23,0.6);
     }
 
     h2{
-      margin-top:0;
+      text-align:center;
       color:#fff;
     }
 
@@ -61,32 +61,118 @@
       background:#e76a43;
     }
 
+    /* CONTENT SECTIONS */
+    .section{
+      display:none;
+      width:90%;
+      max-width:900px;
+      margin:20px auto;
+      background:#fff;
+      color:#333;
+      padding:25px;
+      border-radius:14px;
+      box-shadow:0 6px 25px rgba(0,0,0,0.25);
+    }
+
+    .section h1{
+      text-align:center;
+      margin-top:0;
+    }
+
+    .section img{
+      max-width:100%;
+      border-radius:10px;
+      margin-top:15px;
+    }
+
+    .evidence-box{
+      background:#f3f4f6;
+      padding:15px;
+      border-left:5px solid #ff7b10;
+      border-radius:8px;
+      margin-top:15px;
+    }
+
   </style>
 </head>
 
 <body>
 
+  <!-- MAIN CARD -->
   <div class="card">
-    <h2 style="text-align:center;">About Me</h2>
+    <h2>About Me</h2>
 
-    <!-- Your 6 Buttons -->
     <div class="card-buttons">
-        <button>Networking</button>
-        <button>Operating system</button>
-        <button>Database management</button>
-        <button>maintenance & repair</button>
-        <button>software installation</button>
-        <button>computer programs</button>
+        <button onclick="showSection('networking')">Networking</button>
+        <button onclick="showSection('os')">Operating system</button>
+        <button onclick="showSection('database')">Database management</button>
+        <button onclick="showSection('maintenance')">Maintenance & repair</button>
+        <button onclick="showSection('software')">Software installation</button>
+        <button onclick="showSection('programs')">Computer programs</button>
     </div>
-
   </div>
 
- <div style="display:flex; justify-content:center; align-items:center; height:20vh;">
-  <button 
-    onclick="window.open('https://rashwrld16-max.github.io/EVIDENCE/', '_blank')" 
-    style="padding:15px 30px; font-size:18px; background-color:#007bff; color:white; border:none; border-radius:8px; cursor:pointer;">
-    HOME
-  </button>
+
+  <!-- SECTIONS -->
+
+  <div class="section" id="networking">
+    <h1>Networking</h1>
+    <p>• IP addressing<br>• LAN configuration<br>• Cabling<br>• Network troubleshooting</p>
+    <h2>Evidence</h2>
+    <div class="evidence-box">
+      Add your networking notes, screenshots, and images here.
+    </div>
+  </div>
+
+  <div class="section" id="os">
+    <h1>Operating System</h1>
+    <p>• OS installation<br>• Partitioning<br>• User management</p>
+    <div class="evidence-box">Add OS evidence here.</div>
+  </div>
+
+  <div class="section" id="database">
+    <h1>Database Management</h1>
+    <p>• Tables<br>• Forms<br>• Queries<br>• Reports</p>
+    <div class="evidence-box">Add database evidence here.</div>
+  </div>
+
+  <div class="section" id="maintenance">
+    <h1>Maintenance & Repair</h1>
+    <p>• Cleaning<br>• Troubleshooting<br>• Replacing hardware</p>
+    <div class="evidence-box">Add repair evidence.</div>
+  </div>
+
+  <div class="section" id="software">
+    <h1>Software Installation</h1>
+    <p>• Application setup<br>• Configurations<br>• Licensing</p>
+    <div class="evidence-box">Add software installation notes.</div>
+  </div>
+
+  <div class="section" id="programs">
+    <h1>Computer Programs</h1>
+    <p>• Python<br>• JavaScript<br>• Basic apps</p>
+    <div class="evidence-box">Add programming evidence.</div>
+  </div>
+
+
+  <!-- HOME BUTTON -->
+  <div style="display:flex; justify-content:center; margin:40px 0;">
+    <button 
+      onclick="window.open('https://rashwrld16-max.github.io/EVIDENCE/', '_blank')" 
+      style="padding:15px 30px; font-size:18px; background-color:#007bff; color:white; border:none; border-radius:8px; cursor:pointer;">
+      HOME
+    </button>
+  </div>
+
+
+  <!-- SCRIPT TO SWITCH SECTIONS -->
+  <script>
+  function showSection(id){
+      document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
+      document.getElementById(id).style.display = 'block';
+      window.scrollTo({top:0, behavior:'smooth'});
+  }
+  </script>
 
 </body>
 </html>
